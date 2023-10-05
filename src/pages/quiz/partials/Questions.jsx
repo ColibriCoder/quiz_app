@@ -16,10 +16,7 @@ export const Questions = () => {
 
 	useEffect(() => {
 		if (quizContext?.id) {
-			getQuestions(quizContext.id).then(data => {
-				const sorted = data.sort((a, b) => a.number - b.number)
-				setQuestions(sorted)
-			})
+			getQuestions(quizContext.id).then(data => setQuestions(data))
 		}
 		
 	},[quizContext])
