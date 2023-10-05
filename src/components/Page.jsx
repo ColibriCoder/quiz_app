@@ -1,14 +1,9 @@
-import { Container } from "@mui/material";
-
+import { Container } from "@mui/material"
 
 function Page({children}) {
-
-	return (<div>
-		<Container maxWidth="lg">
-			{/* wrapper */}
+	return <Container maxWidth="lg">
 			{children}
 		</Container>
-	</div>)
 }
 
-export default Page;
+export default Page

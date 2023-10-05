@@ -1,11 +1,11 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { QuizContext } from "../Quiz"
-import { Box, Button, Stack, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import Loader from "../../../components/Loader";
+import { Box, Button, Stack, Typography } from "@mui/material"
+import { Link } from "react-router-dom"
+import Loader from "../../../components/Loader"
 
 export const Intro = () => {
-	const quizContext = useContext(QuizContext);
+	const quizContext = useContext(QuizContext)
 
 	return quizContext 
 		? 

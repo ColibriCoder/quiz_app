@@ -10,9 +10,7 @@ export const QuizList = () => {
 	const [ quizList, setQuizList ] = useState()
 
 	useEffect(() => {
-		getQuizList().then(data => {
-			setQuizList(data);
-		})
+		getQuizList().then(data => setQuizList(data))
 	}, [])
 
 	return <Page>	

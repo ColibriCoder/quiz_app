@@ -1,14 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-import Page from './components/Page';
-import { QuizList } from './pages/QuizList';
-import { Quiz } from './pages/quiz/Quiz';
-import { Intro as QuizIntro} from './pages/quiz/partials/Intro';
-import { Questions as QuizQuestions} from './pages/quiz/partials/Questions';
-import { Result as QuizResult } from './pages/quiz/partials/Result';
+import './App.css'
+import { QuizList } from './pages/QuizList'
+import { Quiz } from './pages/quiz/Quiz'
+import { Intro as QuizIntro} from './pages/quiz/partials/Intro'
+import { Questions as QuizQuestions} from './pages/quiz/partials/Questions'
+import { Result as QuizResult } from './pages/quiz/partials/Result'
 
 
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 const router = createBrowserRouter([
 	{
@@ -16,7 +14,6 @@ const router = createBrowserRouter([
 		element: <QuizList />
 	},
 	{
-		// path: '/quiz/:external_key',
 		element: <Quiz />,
 		children: [
 			{
@@ -39,4 +36,4 @@ function App() {
 	return <RouterProvider router={router} />
 }
 
-export default App;
+export default App

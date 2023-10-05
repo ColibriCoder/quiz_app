@@ -1,21 +1,16 @@
-import { useContext, useEffect, useState } from "react"
-import Page from "../../../components/Page"
-import { QuizContext } from "../Quiz"
-import { Box, Button, Stack, Typography } from "@mui/material";
-import { Link, useParams } from "react-router-dom";
-import { useQuiz } from "../../../api/useQuiz";
-import Loader from "../../../components/Loader";
+import { useEffect, useState } from "react"
+import { Box, Button, Stack, Typography } from "@mui/material"
+import { Link, useParams } from "react-router-dom"
+import { useQuiz } from "../../../api/useQuiz"
+import Loader from "../../../components/Loader"
 
 export const Result = () => {
-	const { result_id } = useParams();
-	const { getResult } = useQuiz();
-	const [ result, setResult ] = useState();
+	const { result_id } = useParams()
+	const { getResult } = useQuiz()
+	const [ result, setResult ] = useState()
 
 	useEffect(() => {
-		console.log(result_id);
-		getResult(result_id).then(data => {
-			setResult(data);
-		})
+		getResult(result_id).then(data => setResult(data))
 	}, []);
 
 	return result
