@@ -1,22 +1,14 @@
 import { useContext, useEffect } from "react"
-import Page from "../../../components/Page"
 import { QuizContext } from "../Quiz"
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import Loader from "../../../components/Loader";
 
 export const Intro = () => {
 	const quizContext = useContext(QuizContext);
 
-	useEffect(() => {
-		if (quizContext) {
-
-			console.log(quizContext.media);
-		}
-	},[quizContext])
-
-	return !quizContext 
-		? 'loader' 
-		:
+	return quizContext 
+		? 
 			<>
 				<Box sx={{textAlign: 'center', py: 1, pb: 2}}>
 					<Box 
@@ -41,5 +33,6 @@ export const Intro = () => {
 					<Button component={Link} to="/" size="large" variant="outlined">Back to list</Button>
 					<Button sx={{"&:hover": { color: "#fff" }}} component={Link} to="quiz"  size="large" variant="contained">Start Quiz</Button>
 				</Stack>
-			</>
+			</> 
+		: <Loader />
 }

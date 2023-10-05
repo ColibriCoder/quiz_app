@@ -1,5 +1,6 @@
 import { Box, Card, CardContent, CardMedia, Grid, Stack, Typography } from "@mui/material"
 import Page from "../components/Page"
+import Loader from "../components/Loader"
 import { Link } from "react-router-dom"
 import { useQuiz } from "../api/useQuiz"
 import { useEffect, useState } from "react"
@@ -49,7 +50,7 @@ export const QuizList = () => {
 							</Grid>
 						</Grid>
 					</Card>
-				) || "loading"}
+				) || <Loader />}
 		</Stack>
     </Page>
 }
